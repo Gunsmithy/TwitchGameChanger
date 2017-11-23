@@ -3,21 +3,18 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Entered the install phase...
       - ls
   pre_build:
     commands:
-      - echo Entered the pre_build phase...
-      - pip install -r requirements.txt -t .
+      - pip install -r requirements.txt -t ./twitchgamechanger
   build:
     commands:
-      - echo Entered the build phase...
       - echo Build started on `date`
+      - zip -r twitchgamechanger.zip twitchgamechanger/*
   post_build:
     commands:
-      - echo Entered the post_build phase...
       - echo Build completed on `date`
 artifacts:
   files:
-    - requirements.txt
+    - twitchgamechanger.zip
   discard-paths: yes
