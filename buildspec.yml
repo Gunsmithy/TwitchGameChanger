@@ -4,6 +4,8 @@ phases:
   install:
     commands:
       - ls
+      - apt-get update -y
+      - apt-get install -y zip
   pre_build:
     commands:
       - pip install -r requirements.txt -t ./twitchgamechanger
